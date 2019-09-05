@@ -6,10 +6,11 @@ kinter
 首先拿到代码https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/10.%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E5%92%8C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91.md
 从第一行就开始不认识···
 
-···python
+··· python
 
-import tkinter
-import tkinter.messagebox
+  import tkinter
+  import tkinter.messagebox
+
 ···
 
 然后Google了一下，发现Tk包是个自带的做图形用户界面的包，但是我还是pip install Tk了一下，然后貌似发现了一个深入讲解tkinter使用方法的网站<br>
@@ -21,7 +22,7 @@ Python Global, Local and Nonlocal variables
 ------------------------------------------
 然后就是函数程序的部分了，首先遇到了 nonlocal ，又不懂，乖乖滚去Google，于是整理一下关于global，local，nonlocal的区别，具体网址在这里https://www.programiz.com/python-programming/global-local-nonlocal-variables<br>
 
-###global
+### global
 
 可以从新定义的函数内部接触，相当于全局变量,有下面一些使用规则<br>
 0.在外部定义的默认值<br>
@@ -31,57 +32,62 @@ Python Global, Local and Nonlocal variables
 3.如果想要在内部函数中也能对global进行修改，使用 ‘import config’，并且使用‘config.x’对x进行调用<br>
 4.上一条还可以在内部使用global标签，将变量本地化，注意这个全局化是建立在最外层的，所以对于嵌套函数不适用<br>
 
-###local
+### local
 
 0.函数内定义的默认值<br>
 1.local属性能够覆盖global属性:即同名时在外部定义的global变量会成为内部定义后的local<br>
 
-###nonlocal
+### nonlocal
 
 0.可以看作global的牛逼版本，因为不能被local覆盖<br>
 
-'''
+  '''
 
-import tkinter
-import tkinter.messagebox
-import config
+    import tkinter
+    import tkinter.messagebox
+    import config
 
-def main():
-    flag = False
+    def main():
+        flag = False
 
-    def change_label_text():
-        nonlocal flag
-        #下面解释一下nonlocal local global的定义
-        flag = not flag
-        color,msg = ("red","hello,world!")\
-            if flag else ('blue','goodbye,world!')
-        #这大概是一种神奇的分支语句
-        label.config(text = msg,fg = color)
+        def change_label_text():
+            nonlocal flag
+            #下面解释一下nonlocal local global的定义
+            flag = not flag
+            color,msg = ("red","hello,world!")\
+                if flag else ('blue','goodbye,world!')
+            #这大概是一种神奇的分支语句
+            label.config(text = msg,fg = color)
 
-    def confirm_to_quit():
-        if tkinter.messagebox.askokcancel('ooooooooooooooops!',"are you sure to quit?"):
-            top.quit()
+        def confirm_to_quit():
+            if tkinter.messagebox.askokcancel('ooooooooooooooops!',"are you sure to quit?"):
+                top.quit()
 
-    #顶层窗口
-    top = tkinter.Tk()
-    #设置窗口大小
-    top.geometry('240x240')
-    top.title('A Boring Window')
-    #创建标签对象并且添加到顶层窗口
-    label = tkinter.Label(top,text='Hello,world!',font='rial -32',fg='black')
-    label.pack(expand=1)
-    #创建按钮容器
-    panel1 = tkinter.Frame(top)
-    button1 = tkinter.Button(panel1,text='change',command=change_label_text)
-    button1.pack(side='left')
-    button2 = tkinter.Button(panel1,text='quit',command=confirm_to_quit)
-    button2.pack(side='right')
-    panel1.pack(side='bottom')
-    #开启主事件循环
-    tkinter.mainloop()
+        #顶层窗口
+        top = tkinter.Tk()
+        #设置窗口大小
+        top.geometry('240x240')
+        top.title('A Boring Window')
+        #创建标签对象并且添加到顶层窗口
+        label = tkinter.Label(top,text='Hello,world!',font='rial -32',fg='black')
+        label.pack(expand=1)
+        #创建按钮容器
+        panel1 = tkinter.Frame(top)
+        button1 = tkinter.Button(panel1,text='change',command=change_label_text)
+        button1.pack(side='left')
+        button2 = tkinter.Button(panel1,text='quit',command=confirm_to_quit)
+        button2.pack(side='right')
+        panel1.pack(side='bottom')
+        #开启主事件循环
+        tkinter.mainloop()
 
+    if __name__ == '__main__':
+        main()
 
-if __name__ == '__main__':
-    main()
-    
-'''
+  '''
+顺便还学习了一下github md文件的编辑方式<br>
+0.关于代码高亮需要使用一个缩进才能生效<br>
+1.\<br>是换行符号,而且我现在打起来感觉非常的麻烦不知道这个问题如何解决<br>
+2.多级标题缩进需要在#后面加空格否则是没有用滴<br>
+3.善用空行<br>
+今日感想：我是一个真情实感的菜鸡，不说了，我要去看一会儿小说转换一下沉痛的心情
