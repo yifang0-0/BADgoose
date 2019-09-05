@@ -6,12 +6,11 @@ kinter
 首先拿到代码https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/10.%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E5%92%8C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91.md
 从第一行就开始不认识···
 
-··· python
+  
 
-  import tkinter
-  import tkinter.messagebox
+    import tkinter
+    import tkinter.messagebox
 
-···
 
 然后Google了一下，发现Tk包是个自带的做图形用户界面的包，但是我还是pip install Tk了一下，然后貌似发现了一个深入讲解tkinter使用方法的网站<br>
 http://thinkingtkinter.sourceforge.net/<br>
@@ -41,7 +40,7 @@ Python Global, Local and Nonlocal variables
 
 0.可以看作global的牛逼版本，因为不能被local覆盖<br>
 
-  '''
+  
 
     import tkinter
     import tkinter.messagebox
@@ -84,7 +83,7 @@ Python Global, Local and Nonlocal variables
     if __name__ == '__main__':
         main()
 
-  '''
+  
 顺便还学习了一下github md文件的编辑方式<br>
 0.关于代码高亮需要使用一个缩进才能生效<br>
 1.\<br>是换行符号,而且我现在打起来感觉非常的麻烦不知道这个问题如何解决<br>
