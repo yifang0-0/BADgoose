@@ -1,15 +1,17 @@
 
 今天是第四天啦 学习有关GUI的知识
-==========================================
-tkinter
+============================================
+kinter
 ----------------------------
 首先拿到代码https://github.com/jackfrued/Python-100-Days/blob/master/Day01-15/10.%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E5%92%8C%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91.md
 从第一行就开始不认识···
 
 ···python
+
 import tkinter
 import tkinter.messagebox
 ···
+
 然后Google了一下，发现Tk包是个自带的做图形用户界面的包，但是我还是pip install Tk了一下，然后貌似发现了一个深入讲解tkinter使用方法的网站<br>
 http://thinkingtkinter.sourceforge.net/<br>
 有空再来看，现在先存一下
@@ -18,7 +20,9 @@ http://thinkingtkinter.sourceforge.net/<br>
 Python Global, Local and Nonlocal variables
 ------------------------------------------
 然后就是函数程序的部分了，首先遇到了 nonlocal ，又不懂，乖乖滚去Google，于是整理一下关于global，local，nonlocal的区别，具体网址在这里https://www.programiz.com/python-programming/global-local-nonlocal-variables<br>
+
 ###global
+
 可以从新定义的函数内部接触，相当于全局变量,有下面一些使用规则<br>
 0.在外部定义的默认值<br>
 1.global可以被内部函数查看，但是不能被修改<br>
@@ -28,13 +32,16 @@ Python Global, Local and Nonlocal variables
 4.上一条还可以在内部使用global标签，将变量本地化，注意这个全局化是建立在最外层的，所以对于嵌套函数不适用<br>
 
 ###local
+
 0.函数内定义的默认值<br>
 1.local属性能够覆盖global属性:即同名时在外部定义的global变量会成为内部定义后的local<br>
 
 ###nonlocal
+
 0.可以看作global的牛逼版本，因为不能被local覆盖<br>
 
-'''python
+'''
+
 import tkinter
 import tkinter.messagebox
 import config
@@ -76,5 +83,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
 '''
-[图片]
