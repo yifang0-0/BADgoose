@@ -10,8 +10,9 @@ class Person(object):
     \u8fd4\u56de\u5177\u6709\u7ed9\u5b9a\u540d\u79f0\u7684 Person \u5bf9\u8c61
     """
 
-    def __init__(self, name):
+    def __init__(self, name,grade):
         self.name = name
+        self.grade = grade
 
     def get_details(self):
         """
@@ -26,17 +27,18 @@ class Student(Person):
     """
 
     def __init__(self, name, branch, year):
-        Person.__init__(self, name)
+        Person.__init__(self, name,grade)
         self.branch = branch
         self.year = year
-    def count(self,s):
-        con=Counter(s)
+
+    def count(self):
+        con=Counter(grade)
         p=namedtuple("score",['Pass','Fail'])
         c=p(con['A']+con['B']+con['C'],con['D'])
         m=[]
-        pa="Pass:"+c.Pass
+        pa="Pass: "+c.Pass
         m.append(pa)
-        fa="Fail:"+c.Fail
+        fa="Fail: "+c.Fail
         m.append(fa)
         return m
     def get_details(self):
@@ -51,13 +53,13 @@ class Teacher(Person):
     \u8fd4\u56de Teacher \u5bf9\u8c61\uff0c\u91c7\u7528\u5b57\u7b26\u4e32\u5217\u8868\u4f5c\u4e3a\u53c2\u6570
     """
     def __init__(self, name, papers):
-        Person.__init__(self, name)
+        Person.__init__(self, name,grade)
         self.papers = papers
-    def count(self,s):
-        c=Counter(s)
+    def count(self):
+        c=Counter(grade)
         p=[]
         for i in c:
-            m=i+':'+c[i]
+            m=i+': '+c[i]
             p.append[i]
         return p
 
@@ -67,11 +69,12 @@ class Teacher(Person):
 
 
 if sys.arg[1]=='teacher':
-    teacher1=teacher()
-    print(str(teacher1.count(sys.argv[2]).strip('[]')))
+    teacher1=teacher('a',['a'],sys.argv[2])
+    print(','.join(teacher1.count()))
 else:
-    student1=student()
-    print(str(student1.count(sys.argv[2]).strip('[]')))
+    student1=student('a','a',2005,sys.argv[2])
+    print(','.join(student1.count()))
+
 ```
 
 #### 参考答案
